@@ -24,21 +24,38 @@
     position: relative;
 }
 
-.bot, .top {
+.next, .prev {
     position: absolute;
     background-color: yellow;
     left: 50%;
     transform: translate(-50%);
+    z-index: 10;
+    cursor: pointer;
 }
 
-.top{
+.prev{
     left: 50%;
     transform: translate(-50%);
     top: 20px;
 }
 
-.bot{
+.next{
     bottom: 20px;
     left: 50%;
     transform: translate(-50%);
+}
+
+.item{
+    height: 100%;
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
