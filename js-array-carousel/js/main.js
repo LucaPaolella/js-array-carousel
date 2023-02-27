@@ -7,37 +7,41 @@
 <div class="item"> <img src="img/05.webp" alt=""> </div>*/
 
 const imgs = ["01.webp","02.webp","03.webp","04.webp","05.webp",];
-
-let itemsContent = "";
+const slider = document.querySelector(".slider");
 let active = 0;
 
-const slider = document.querySelector(".slider");
+let itemsContent = "";
 
 for(let i=0; i < imgs.length; i++) {
     console.log(imgs[i]);
 
-    itemsContent += '<div class="item"> <img src="img/01.webp" alt=""> </div>';
+    itemsContent += `<div class="item"><img src="img/${imgs[i]}"alt=""> </div>`;
 }
 
-slider.innerHTML += itemsContent;
+slider.innerHTML = slider.innerHTML +itemsContent;
 document.querySelector(".item").classList.add("show");
 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
-const items = document.querySelector(".item");
-console.log(items)
 
-prev.addEventListener("click", function(){
-    alert("prev");
+const items = document.querySelectorAll(".item");
+items[active].classList.add("show");
+console.log(items);
+
+prev.addEventListener("click", function () {
+    if (active>0){
+        items[active].classList.remove("show");
+        active--;
+        items[active].classList.add("show");
+    }
 });
 
 next.addEventListener("click", function(){
 
     if (active < items.length - 1){
-        console.log("incremento active");
-        items[active].classList.remove("show")
+        items[active].classList.remove("show");
         active++;
-        items[active].classList.add("show")
+        items[active].classList.add("show");
     }
 })
 
