@@ -1,7 +1,44 @@
 /*reset*/
 
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/*common*/
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    width: 700px;
+    height: 300px;
+    background-color: aqua;
+    position: relative;
+}
+
+.bot, .top {
+    position: absolute;
+    background-color: yellow;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.top{
+    left: 50%;
+    transform: translate(-50%);
+    top: 20px;
+}
+
+.bot{
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
 }
